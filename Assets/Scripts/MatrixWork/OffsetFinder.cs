@@ -86,15 +86,13 @@ namespace MatrixFinder
                     }
                 case SearchMode.FastFull:
                     {
-                        var offsetDictionaryArray = await _invertedModelMatrices.Select(model => UniTask.RunOnThreadPool(() => FindOffsets(model, _spaceMatrices), cancellationToken:cancellation));
+                        var offsetDictionaryArray = await _invertedModelMatrices.Select(model => UniTask.RunOnThreadPool(() => FindOffsets(model, _spaceMatrices), cancellationToken: cancellation));
 
                         ConcatOffsets(offsetDictionaryArray);
 
-                        if (!EnableParallelCreation)
-                        {
-                            VisualizeOffsets(offsetDictionaryArray.LastOrDefault()[false], _redOffsetCreator);
-                            VisualizeOffsets(_totalOffsets, _greenOffsetCreator);
-                        }
+                        VisualizeOffsets(offsetDictionaryArray.LastOrDefault()[false], _redOffsetCreator);
+                        VisualizeOffsets(_totalOffsets, _greenOffsetCreator);
+
 
                         break;
                     }

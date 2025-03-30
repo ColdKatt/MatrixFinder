@@ -48,7 +48,10 @@ namespace MatrixFinder.HelpTools
         private static void Save(string jsonString)
         {
             var dt = DateTime.Now;
-            File.WriteAllText(Application.dataPath + $"/Resources/result{dt.Day}{dt.Month}{dt.Year}{dt.Hour}{dt.Minute}{dt.Second}.json", jsonString);
+            var path = Application.dataPath + $"/Resources/result{dt.Day}{dt.Month}{dt.Year}{dt.Hour}{dt.Minute}{dt.Second}.json";
+            File.WriteAllText(path, jsonString);
+
+            Debug.Log($"File saved in {path}");
         }
 
         [Serializable]

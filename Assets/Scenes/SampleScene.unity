@@ -474,7 +474,7 @@ MonoBehaviour:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
-  _searchMode: 1
+  _searchMode: 0
   _enableParallelCreation: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
